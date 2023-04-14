@@ -6,17 +6,19 @@ import { NotePage } from './pages/NotePage';
 
 function App() {
   return (
-  <div className="App">
-    <>
-        <Header />
-        <Router>
-          <Switch>
-            <Route path='/' exact Component={NotelistsPage} />
-            <Route path='/note/:id' Component={NotePage} />
-            Inote
-          </Switch>
-        </Router>
-    </>
+    <div className="container dark">
+      <div className="app">
+        <>
+          <Header />
+          <Router>
+            <Switch>
+              <Route path='/' exact Component={NotelistsPage} />
+              <Route path='/note/:id' Component={NotePage} />
+              Inote
+            </Switch>
+          </Router>
+        </>
+      </div>
   </div>
   );
 }
