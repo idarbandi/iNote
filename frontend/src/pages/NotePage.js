@@ -6,7 +6,8 @@ import { useNavigate } from 'react-router-dom';
 
 export const NotePage = ( match ) => {
 
-  let noteId = useParams();
+  let noteId = useParams().id;
+  console.log(noteId)
   let [note, setNote] = useState(null)
   let history = useNavigate();
 
@@ -16,13 +17,13 @@ export const NotePage = ( match ) => {
 
   let getNote = async () => {
       if (noteId === "new") return 
-      let response = await fetch(`/api/notes/${noteId.id}`)
+      let response = await fetch(`/api/notes/${noteId}`)
       let data = await response.json()
       setNote(data)
   }
 
   let updateNote = async () => {
-    let response = await fetch(`/api/notes/${noteId.id}/update/`, {
+    let response = await fetch(`/api/notes/${noteId}/update/`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json"
@@ -44,7 +45,7 @@ export const NotePage = ( match ) => {
   }
   
   let deleteNote = async () => {
-    let response = await fetch(`/api/notes/${noteId.id}/delete/`, {
+    fetch(`/api/notes/${noteId}/delete/`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json"
@@ -59,9 +60,10 @@ export const NotePage = ( match ) => {
       deleteNote()
     } else if (noteId !== "new") {
       updateNote()
-    } else if (noteId !== "new" && note !== null) {
+    } else if (noteId == "new" && note !== null) {
       createNote()
     }
+    history("/")
   }
 
   
@@ -70,14 +72,13 @@ export const NotePage = ( match ) => {
     <div className='note'>
       <div className='note-header'>
         <h3>
-
-          <ArrowLeft onClick={handleSubmit}/>
-
-          
+          <ArrowLeft onClick={handleSubmit}/>          
         </h3>
         {noteId !== "new" ? (
-          <button onClick={deleteNote}>Delete</button>
-        ) : <button>Done</button>}
+            <button onClick={deleteNote}>Delete</button>
+        ) : (
+            <button onClick={handleSubmit}>Done</button> 
+        )}
       </div>
       <textarea onChange={(e) => { setNote({ ...note, "body": e.target.value }) }} defaultValue={note && note.body}></textarea>
     </div>
