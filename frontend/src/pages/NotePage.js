@@ -56,11 +56,11 @@ export const NotePage = ( match ) => {
   
 
   let handleSubmit = () => {
-    if (noteId !== "new" && !note.body) {
+    if (noteId !== "new" && note.body === "" ) {
       deleteNote()
     } else if (noteId !== "new") {
       updateNote()
-    } else if (noteId == "new" && note !== null) {
+    } else if (noteId === "new" && note !== null) {
       createNote()
     }
     history("/")
@@ -80,7 +80,7 @@ export const NotePage = ( match ) => {
             <button onClick={handleSubmit}>Done</button> 
         )}
       </div>
-      <textarea onChange={(e) => { setNote({ ...note, "body": e.target.value }) }} defaultValue={note && note.body}></textarea>
+      <textarea onChange={(e) => { setNote({ ...note, "body": e.target.value }) }} value={note && note.body}></textarea>
     </div>
   )
 }
