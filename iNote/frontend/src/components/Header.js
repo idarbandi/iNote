@@ -4,7 +4,7 @@ import React from 'react'
     return (
         <div>
             <h1>
-                Our Header
+                iNote
             </h1>
         </div>
     )

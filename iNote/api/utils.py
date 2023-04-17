@@ -13,6 +13,11 @@ def deleteNote(request, pk):
     return Response("Note Has Been Deleted")
 
 def updateNote(request, pk):
+    data = request.data
     note = Note.objects.get(id=pk)
-    note.update()
-    return Response("Note Has Been Updated")
+    serializer = NoteSerializer(instance=note, data=data)
+    
+    if serializer.is_valid():
+        serializer.save()
+        
+    return Response(serializer.data)
