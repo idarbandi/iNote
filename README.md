@@ -1,7 +1,8 @@
-<h1 align="center">iNote a Simple Note application Developed With Django & React</h1>
+<h1 align="center">iNote</h1>
+<h3> a Simple Note application Developed With Django & React </>
 <h3 align="center">ReactJs Frontend Integrated with Django For The Backend That Covers Complete CRUD</h3>
 
-<img src="/iNote/frontend/public/Screenshot from 2023-04-17 13-00-36.png" alt="iNote">
+<img src="/iNote/frontend/public/Screenshot from 2023-04-17 13-00-36.png" alt="iNote" width="100%">
 
 <p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=idarbandi" alt="idarbandi" /></a> </p>
 
