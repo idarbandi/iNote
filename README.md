@@ -8,13 +8,6 @@
 
 <p align="left"> <a href="https://twitter.com/crazy4cinema" target="blank"><img src="https://img.shields.io/twitter/follow/crazy4cinema?logo=twitter&style=for-the-badge" alt="crazy4cinema" /></a> </p>
 
-- 🌱 I’m currently learning **Docker, Nginx**
-
-- 👨‍💻 All of my projects are available at [https://github.com/idarbandi](https://github.com/idarbandi)
-
-- 📝 I regularly write articles on [www.iranarticle.ir](www.iranarticle.ir)
-
-- 💬 Ask me about **python , linux servers , django, Restframework, REACTJS , NODEjs and ...**
 
 - 📫 How to reach me **darbandidr99@gmail.com**
 
